@@ -1,0 +1,109 @@
+import cv2
+import numpy as np
+import htm
+import os
+import time
+folderpath="header"
+mylist=os.listdir(folderpath)
+print(mylist)
+CLS=0
+overlaylist=[]
+for impath in mylist:
+    img=cv2.imread(f'{folderpath}/{impath}')
+    overlaylist.append(img)
+#print(len(overlaylist))
+header=overlaylist[0]
+xp,yp=0,0
+brusht=10
+erasert=70
+imgcanvas=np.zeros((720,1280,3),np.uint8)
+drawcolor=(255,0,255)
+cap=cv2.VideoCapture(0)
+cap.set(3,1280)
+cap.set(4,720)
+detector=htm.handDetector(detectionCon=0.85)
+while True:
+    success,img1=cap.read()
+    img1=cv2.flip(img1,1)
+    img=detector.findHands(img1)
+    lmlist,bbox=detector.findPosition(img1,draw=False)
+    if len(lmlist)!=0:
+        x2,y2=lmlist[12][1:]
+        x1, y1 = lmlist[8][1:]
+        fingers=detector.fingersup()
+        if fingers[1]and fingers[2]:
+            xp,yp=0,0
+            cv2.rectangle(img,(x1,y1-25),(x2,y2 + 25),drawcolor,cv2.FILLED)
+            #print("selection mode")
+            if y1<125:
+                if 258<x1<450:
+                    header=overlaylist[0]
+                    drawcolor=(255,0,255)
+                elif 0<x1<256:
+                    drawcolor=(0,0,200)
+                    cv2.putText(img1, "SQUARE MODE", (100, 255), cv2.FONT_HERSHEY_PLAIN, 5, (255, 0, 0), 6)
+                elif 451<x1<560:
+                    drawcolor=(0,255,255)
+                    cv2.putText(img1, "CIRCLE MODE", (100, 255), cv2.FONT_HERSHEY_PLAIN, 5, (255, 0, 0), 6)
+                elif 672<x1<770:
+                    drawcolor = (50, 255, 255)
+                    cv2.putText(img1, "TRIANGLE MODE", (100, 255), cv2.FONT_HERSHEY_PLAIN, 5, (255, 0, 0), 6)
+                elif 567<x1<670:
+                    header=overlaylist[2]
+                    drawcolor=(0,255,25)
+                elif 772<x1<872:
+                    header=overlaylist[1]
+                    drawcolor=(255,22,100)
+                elif 873<x1<1000:
+                    drawcolor=(0,0,0)
+                    CLS=1
+                    #cv2.rectangle(img,(0,0),(1280,720),drawcolor,cv2.FILLED)
+                    cv2.putText(img1, "CLEAR SCREEN", (100, 255), cv2.FONT_HERSHEY_PLAIN, 5, (255, 0, 0), 6)
+                elif 1017<x1<1133:
+                    header=overlaylist[3]
+                    brusht=10
+                    drawcolor=(0,0,0)
+        if fingers[1] and fingers[2]==False:
+            cv2.circle(img1,(x1,y1),15,drawcolor,cv2.FILLED)
+            #print("drawing mode")
+            if xp==0 and yp==0:
+                xp,yp=x1,y1
+            if drawcolor==(0,0,0) and CLS==1:
+                cv2.rectangle(img1, (0, 0), (1280, 720), drawcolor, cv2.FILLED)
+                cv2.rectangle(imgcanvas, (0, 0), (1280,720 ), drawcolor, cv2.FILLED)
+
+            if drawcolor==(0,0,0) and CLS==0:
+                cv2.line(img, (xp, yp), (x1, y1), drawcolor, erasert)
+                cv2.line(imgcanvas, (xp, yp), (x1, y1), drawcolor, erasert)
+            elif  drawcolor==(0,255,255):
+                cv2.circle(img1,(x1,y1),125,drawcolor)
+                cv2.circle(imgcanvas, (x1, y1), 125, drawcolor)
+                time.sleep(0.3)
+            elif drawcolor==(0,0,200):
+                cv2.rectangle(img,(xp,yp),(xp+250,yp+250),drawcolor,thickness=5)
+                cv2.rectangle(imgcanvas, (xp, yp), (xp + 250, yp + 250), drawcolor, thickness=5)
+                time.sleep(0.3)
+            elif drawcolor == (50, 255, 255):
+                cv2.line(img1, (xp, yp), (xp, yp+200), drawcolor, 5)
+                cv2.line(imgcanvas, (xp, yp), (xp,yp+200), drawcolor, 5)
+                cv2.line(img1, (xp,yp+200), (xp+200,yp+200), drawcolor, 5)
+                cv2.line(imgcanvas, (xp,yp+200), (xp+200,yp+200), drawcolor, 5)
+                cv2.line(img1, (xp + 200, yp + 200), (xp,yp), drawcolor, 5)
+                cv2.line(imgcanvas, (xp + 200, yp +200), (xp,yp), drawcolor,5)
+                time.sleep(0.3)
+
+            else:
+                cv2.line(img1,(xp,yp),(x1,y1),drawcolor,brusht)
+                cv2.line(imgcanvas, (xp, yp), (x1, y1), drawcolor, brusht)
+            xp,yp=x1,y1
+    imggray=cv2.cvtColor(imgcanvas,cv2.COLOR_BGR2GRAY)
+    _,imginv=cv2.threshold(imggray,58,255,cv2.THRESH_BINARY_INV)
+    imginv=cv2.cvtColor(imginv,cv2.COLOR_GRAY2BGR)
+    img1=cv2.bitwise_and(img1,imginv)
+    img1=cv2.bitwise_or(img1,imgcanvas)
+    img1[0:125,0:1280]=header
+    #img1=cv2.addWeighted(img,0.5,imgcanvas,0.5,0)
+    cv2.imshow("canvas",imgcanvas)
+    cv2.imshow("image",img1)
+    #cv2.imshow("inv",imginv)
+    cv2.waitKey(1)
