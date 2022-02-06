@@ -1,0 +1,74 @@
+import  cv2
+import htm
+import time
+from pynput.keyboard import Key,Controller
+cap=cv2.VideoCapture(0)
+cap.set(3,1280)
+cap.set(4,720)
+detector=htm.handDetector(detectionCon=0.8)
+keys=[["Q","W","E","R","T","Y","U","I","O","P"],
+      ["A","S","D","F","G","H","J","K","L",";","'"],
+      ["Z","X","C","V","B","N","M",",","."," "
+       ],["1" ,"2","3","4","5","6","7","8","9","0"]]
+finaltext=""
+keyboard=Controller()
+#finger=detector.fingersup()
+
+def drawall(img,buttonlist):
+   for button in buttonlist:
+        x, y = button.pos
+        w, h = button.size
+        cv2.rectangle(img, (x, y), (x + w, y + h), (12, 0, 255), cv2.FILLED)
+        cv2.putText(img, button.text, (x + 10, y + 65), cv2.FONT_HERSHEY_PLAIN, 5, (255, 255, 255), 5)
+   return img
+class button():
+    def __init__(self, pos, text, size=(85,85)):
+        self.pos = pos
+        self.text = text
+        self.size = size
+    def draw(self):
+        x, y = self.pos
+        w, h = self.size
+        cv2.rectangle(img, (x, y), (x + w, y + h), (12, 0, 255), cv2.FILLED)
+        cv2.putText(img, self.text, (x + 10, y + 65), cv2.FONT_HERSHEY_PLAIN, 4, (255, 255, 255), 4)
+
+bkp=button((1060,50),"bk")
+buttonlist = []
+for i in range(len(keys)):
+    for j, key in enumerate(keys[i]):
+        buttonlist.append(button([100 * j + 50, 100 * i + 50], key))
+while True:
+    success,img=cap.read()
+    img = cv2.flip(img, 1)
+    img=detector.findHands(img)
+    lmlist,bbox=detector.findPosition(img)
+    bkp.draw()
+    img=drawall(img,buttonlist)
+    if lmlist:
+        if 1060 < lmlist[8][1] < 1145 and 50 < lmlist[8][2] < 135:
+             cv2.rectangle(img, (1060,50), (1145,135),(0,0,175), cv2.FILLED)
+             cv2.putText(img, "bk", (1060 + 10, 50 + 65), cv2.FONT_HERSHEY_PLAIN, 4, (255, 255, 255),4)
+             l, _, _ = detector.findDistance(8, 12, img)
+             BKP = 1
+             if l < 30 and BKP == 1:
+                keyboard.press(Key.backspace)
+                keyboard.release(Key.backspace)
+                time.sleep(0.15)
+        else:
+            BKP = 0
+        for button in buttonlist:
+                x,y=button.pos
+                w,h=button.size
+                if x < lmlist[8][1] < x+w and y < lmlist[8][2] < y+h and BKP==0:
+                    cv2.rectangle(img, button.pos, (x + w, y + h),(175,0,175), cv2.FILLED)
+                    cv2.putText(img, button.text, (x + 10, y + 65), cv2.FONT_HERSHEY_PLAIN, 5, (255, 255, 255), 5)
+                    l,_,_=detector.findDistance(8,12,img)
+                    BKP=0
+                    if l<30 and BKP==0:
+                        keyboard.press(button.text)
+                        cv2.rectangle(img, button.pos, (x +w+25, y +h+ 25), (0, 255, 0), cv2.FILLED)
+                        cv2.putText(img, button.text, (x + 10, y + 65), cv2.FONT_HERSHEY_PLAIN, 5, (255, 255, 255), 5)
+                        finaltext+=button.text
+                        time.sleep(0.25)
+    cv2.imshow("image",img)
+    cv2.waitKey(1)
