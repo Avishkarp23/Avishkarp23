@@ -47,7 +47,7 @@
    <img src="https://github-readme-stats.vercel.app/api?username=avishkarp23&show_icons=true&theme=dark"/>
 <!--    <img src="https://github-readme-streak-stats.herokuapp.com?user=iamakkkhil&theme=dark&ring=3B8D0C"/> -->
 </p>
-<p align="center">&nbsp;<img align="center" src= "https://github-readme-streak-stats.herokuapp.com/?user=avishkarp23&layout=compact&theme=blueberry_duo&background=0500206A&dates=3795DD" alt="avishkarp23" /> </p>
+<p align="center">&nbsp;<img align="center" src= "https://github-readme-streak-stats.herokuapp.com/?user=avishkarp23&layout=compact&theme=dark&background=0500206A&dates=3795DD" alt="avishkarp23" /> </p>
 
 
 <hr>
