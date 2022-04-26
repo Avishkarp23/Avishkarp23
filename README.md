@@ -47,6 +47,8 @@
    <img src="https://github-readme-stats.vercel.app/api?username=avishkarp23&show_icons=true&theme=dark"/>
 <!--    <img src="https://github-readme-streak-stats.herokuapp.com?user=iamakkkhil&theme=dark&ring=3B8D0C"/> -->
 </p>
+<p align="center">&nbsp;<img align="center" src= "https://github-readme-streak-stats.herokuapp.com/?user=avishkarp23&layout=compact&theme=blueberry_duo&background=0500206A&dates=3795DD" alt="avishkarp23" /> </p>
+
 
 <hr>
 <h2 align="center"> <img src='https://raw.githubusercontent.com/ShahriarShafin/ShahriarShafin/main/Assets/handshake.gif' width="60px"> Connecct with me <img src='https://raw.githubusercontent.com/ShahriarShafin/ShahriarShafin/main/Assets/handshake.gif' width="60px"></h2>
