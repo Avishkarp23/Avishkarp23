@@ -1,6 +1,6 @@
 
 ![Avishkar Patil](https://user-images.githubusercontent.com/89678319/162588120-da5cc839-132c-4df8-b8d0-f8956d001cdb.png)
- <center> <h2 align="center"><img src="https://raw.githubusercontent.com/777ahesh/777ahesh/main/wave.gif" width="20px" >Hi folks ! Avishkar here</h2></center>
+ <center> <h2 align="center"><img src="https://raw.githubusercontent.com/777ahesh/777ahesh/main/wave.gif" width="50" >Hi folks ! Avishkar here</h2></center>
  
  <ul type="square">
  <li> I'm a 2nd year undergrad student of Information Technology at International Institute Of Information Technology Pune! 
@@ -21,7 +21,7 @@
 
 - 📫 How to reach me patilavishkar5@gmail.com</div>
 <hr>
-<h2 align="center"> <img src = "https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width = 32px>  Tech stacks <img src = "https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width = 32px></h2>
+<h2 align="center"> <img src = "https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width='32'>  Tech stacks <img src = "https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width = "32"></h2>
 <p align="center">
   <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue" >&nbsp;&nbsp;
   <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" >&nbsp;&nbsp;
@@ -51,7 +51,7 @@
 
 
 <hr>
-<h2 align="center"> <img src='https://raw.githubusercontent.com/ShahriarShafin/ShahriarShafin/main/Assets/handshake.gif' width="60px"> Connecct with me <img src='https://raw.githubusercontent.com/ShahriarShafin/ShahriarShafin/main/Assets/handshake.gif' width="60px"></h2>
+<h2 align="center"> <img src='https://raw.githubusercontent.com/ShahriarShafin/ShahriarShafin/main/Assets/handshake.gif' width="80"> Connect with me <img src='https://raw.githubusercontent.com/ShahriarShafin/ShahriarShafin/main/Assets/handshake.gif' width="80"></h2>
 <p align="center">
   <a target="_blank"href="https://www.linkedin.com/in/avishkar-patil-9b0211205"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
   <a target="_blank"href="https://twitter.com/avishkar2319"><img src="https://img.shields.io/badge/twitter-%231DA1F2.svg?&style=for-the-badge&logo=twitter&logoColor=white" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
