@@ -1,6 +1,6 @@
 
 ![Avishkar Patil](https://user-images.githubusercontent.com/89678319/162588120-da5cc839-132c-4df8-b8d0-f8956d001cdb.png)
- <center> <h2 align="center"><img src="https://raw.githubusercontent.com/777ahesh/777ahesh/main/wave.gif" width="50" >Hi folks ! Avishkar here</h2></center>
+ <center> <h2 align="center"><img src="wave.gif" width="50" >Hi folks ! Avishkar here</h2></center>
  
  <ul type="square">
  <li> I'm a 2nd year undergrad student of Information Technology at International Institute Of Information Technology Pune! 
