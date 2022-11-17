@@ -13,7 +13,7 @@
 <div>  <ul>
   <img src="https://camo.githubusercontent.com/e20822b4282c07ffd010cd05f855a6561d3b62358ca9e607e4901288dd748fcb/68747470733a2f2f63646e2e6472696262626c652e636f6d2f75736572732f323133313939332f73637265656e73686f74732f343934383733362f74686f75676874776f726b732d6769665f6472696262626c652e676966" alt="null" align="right" height="200" width="250">
 <li> 👀 I’m interested in Data science ,IOT  and blockchain</li>
-<li> 🌱 I’m currently learning python stack for backend development and  data science libraries</li>
+<li> 🌱 I’m currently learning Android mobile app development with python stack for backend development and  data science libraries </li>
  <li> 🌱 I’m also learning dart and flutter</li>
  <li>💞️ I’m looking to collaborate on development and machine learning projects</li>
   <li> 👀Ask me anything on python ,openCV ,basics of IOT and AWS
