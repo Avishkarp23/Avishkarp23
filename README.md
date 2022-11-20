@@ -15,8 +15,8 @@
 <li> 👀 I’m interested in Data science ,IOT  and blockchain</li>
 <li> 🌱 I’m currently learning Android mobile app development with python stack for backend development and  data science libraries </li>
  <li> 🌱 I’m also learning dart and flutter</li>
- <li>💞️ I’m looking to collaborate on development and machine learning projects</li>
-  <li> 👀Ask me anything on python ,openCV ,basics of IOT and AWS
+ <li>💞️ I’m looking to collaborate on App development and Python backend projects</li>
+  <li> 👀Ask me anything on python ,openCV ,Android App development,Machine Learning
   </ul>
 
 - 📫 How to reach me patilavishkar5@gmail.com</div>
