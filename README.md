@@ -3,7 +3,7 @@
  <center> <h2 align="center"><img src="wave.gif" width="50" >Hi folks ! Avishkar here</h2></center>
  
  <ul type="square">
- <li> I'm a 3rd year undergrad student of Information Technology at International Institute Of Information Technology Pune! 
+ <li> I'm a final year undergrad student of Information Technology at International Institute Of Information Technology Pune! 
  </li>
   <li> I'm a tech geek exploring different tech stacks</li>
   <li>I'm always happy to collaborate on different projects
